@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmailSignUpActivity"
+    android:gravity="center"
+    android:padding="50dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/signup_email_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"/>
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="first &amp; last name"
+            android:inputType="text"/>
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/signup_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+        <RadioGroup
+            android:id="@+id/signup_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:weightSum="2">
+            <RadioButton
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/admin_signup"
+                android:onClick="onSignUpRadioButton"
+                android:text="Admin"/>
+            <RadioButton
+                android:layout_weight="1"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/customer_signup"
+                android:onClick="onSignUpRadioButton"
+                android:text="Customer"/>
+        </RadioGroup>
+        <Button
+            android:onClick="signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign up"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
